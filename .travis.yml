@@ -1,2 +1,6 @@
 language: python
+python:
+  -"3.6.5"
+script:
+pytest
 os: osx
