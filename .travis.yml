@@ -8,3 +8,4 @@ install:
 
 script:
 - python hello.py
+after_success: coveralls
