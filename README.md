@@ -3,4 +3,4 @@ This is a sentiment analysis project. The project fetches and imports Tweets fro
 
 [![Build Status](https://travis-ci.org/nadiasalgado/sentimentanalysis2019.svg?branch=master)](https://travis-ci.org/nadiasalgado/sentimentanalysis2019)
 
-[![Coverage Status](https://coveralls.io/repos/github/nadiasalgado/sentimentanalysis2019/badge.svg?branch=master)](https://coveralls.io/github/nadiasalgado/sentimentanalysis2019?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/nadiasalgado/sentimentanalysis2019/badge.svg?branch=copy)](https://coveralls.io/github/nadiasalgado/sentimentanalysis2019?branch=copy)
