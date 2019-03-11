@@ -4,7 +4,7 @@ python:
 - "2.7"
 
 install:
-- gulp coveralls
+- pip install coveralls
 
 script:
 - python hello.py
