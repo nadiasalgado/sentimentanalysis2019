@@ -1,0 +1,35 @@
+{
+    "generator-jhipster": {
+        "promptValues": {
+            "packageName": "com.sentimentanalysis.project"
+        },
+        "jhipsterVersion": "5.8.2",
+        "applicationType": "monolith",
+        "baseName": "webapp",
+        "packageName": "com.sentimentanalysis.project",
+        "packageFolder": "com/sentimentanalysis/project",
+        "serverPort": "8080",
+        "authenticationType": "jwt",
+        "cacheProvider": "ehcache",
+        "enableHibernateCache": true,
+        "websocket": false,
+        "databaseType": "sql",
+        "devDatabaseType": "h2Disk",
+        "prodDatabaseType": "mysql",
+        "searchEngine": false,
+        "messageBroker": false,
+        "serviceDiscoveryType": "eureka",
+        "buildTool": "maven",
+        "enableSwaggerCodegen": false,
+        "jwtSecretKey": "NGEyY2E5M2NiYzMyNzBhMDM0MDc0OTdjMjY3ODc1ZTRmZDNkNDBiZDE1MzQxMWM2NzY2MmJhNmE3MWM0YjVlMGQ3YzI4NTg5ZTBhZWQzMjgwN2UwMzUwMDA2YjAzYWYyMDQyZDE1NDg3YTZjMmY1OWQyMmMyMWQxYmExNTAyNmE=",
+        "clientFramework": "angularX",
+        "useSass": true,
+        "clientPackageManager": "npm",
+        "testFrameworks": [],
+        "jhiPrefix": "jhi",
+        "entitySuffix": "",
+        "dtoSuffix": "DTO",
+        "otherModules": [],
+        "enableTranslation": false
+    }
+}
