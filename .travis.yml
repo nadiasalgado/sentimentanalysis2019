@@ -4,6 +4,6 @@ python:
 install:
   - pip install coveralls
 script:
-  - python hello.py test home
-  - coverage run --source=home hello.py test home
+  - python hello.py
+  - coverage run --source=home hello.py
 after_success: coveralls
