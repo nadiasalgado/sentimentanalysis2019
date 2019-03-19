@@ -1,5 +1,9 @@
 # sentimentanalysis2019
-This is a sentiment analysis project. The project fetches and imports Tweets from Twitter given certain parameters, parsed by the project developers. A sentiment analysis will then be performed on each individual Tweet, classifying the Tweet as either positive, negative or neutral. The gathered results will then be graphed and displayed on a web application, displaying proportion of each parameter's sentiment. This is particularly useful for marketing purposes as one may use the sentiment of a parameter for their particular line of business.
+What is Sentiment Analysis?
+
+Sentiment Analysis is the process of computationally identifying and categorizing a piece of text, especially in order to determine whether the overall sentiment of the text is positive, negative, or neutral. Under the name "Dave from IT", SentimentAnalysis2019 is a web-based application designed to perform a sentiment analysis on tweets that contain particular keywords or topics entered by the user, in order to display the general sentiment of that particular topic.
+
+SentimentAnalysis2019 achieves this by retrieving a certain number of tweets containing the topic, performing a sentiment analysis using a lexicon-based approach from Natural Language Processing (NLP) on the tweets retrieved and finally displaying an interactive graph of positively vs negatively vs neutrally opinionated tweets on the topic. SentimentAnalaysis2019 makes use of twitter API's to retrieve real tweets, NLP algorithms in Python and Python libraries to perform the sentiment analysis, HTML for the overall display of the application and results and Jhipster to host the application. The SentimentAnalysis2019 application is particularly useful for the marketing and sales departments of institutions as an analysis may be performed on topics, particular to the institutions line of business, in order to view the general consensus of the topic and thus react accordingly.
 
 [![Build Status](https://travis-ci.org/nadiasalgado/sentimentanalysis2019.svg?branch=master)](https://travis-ci.org/nadiasalgado/sentimentanalysis2019)
 
