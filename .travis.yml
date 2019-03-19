@@ -1,11 +1,11 @@
 language: python
 
 python:
-- "3.6"
+  - "3.6"
 
 install:
-- pip install coveralls
-
+  - pip install coveralls
 script:
-- python hello.py
+  - python hello.py test home
+  - coverage run --source=home hello.py test home
 after_success: coveralls
