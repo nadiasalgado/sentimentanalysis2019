@@ -1,6 +1,5 @@
 # sentimentanalysis2019
 What is Sentiment Analysis?
-What is Sentiment Analysis?
 
 Sentiment Analysis is the process of computationally identifying and categorizing a piece of text, especially in order to determine whether the overall sentiment of the text is positive, negative, or neutral. Under the name "Dave from IT", SentimentAnalysis2019 is a web-based application designed to perform a sentiment analysis on tweets that contain particular keywords or topics entered by the user, in order to display the general sentiment of that particular topic.
 
