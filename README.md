@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/nadiasalgado/sentimentanalysis2019.svg?branch=master)](https://travis-ci.org/nadiasalgado/sentimentanalysis2019)
+[![Build Status](https://travis-ci.org/nadiasalgado/sentimentanalysis2019.svg?branch=master)](https://travis-ci.org/nadiasalgado/sentimentanalysis2019) [![Coverage Status](https://coveralls.io/repos/github/nadiasalgado/sentimentanalysis2019/badge.svg?branch=master)](https://coveralls.io/github/nadiasalgado/sentimentanalysis2019?branch=master)
 
 # SentimentAnalysis2019
 
