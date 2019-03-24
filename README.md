@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/nadiasalgado/sentimentanalysis2019.svg?branch=master)](https://travis-ci.org/nadiasalgado/sentimentanalysis2019)
+
 # sentimentanalysis2019
 
 What is Sentiment Analysis?
