@@ -17,50 +17,50 @@ def analysis(str):
 
 with open('TestTweets.txt') as fp: #Referring to the txt the file as fp
 
-strs = []
+	strs = []
 
-for line in fp:
-    strs.append(line)
+	for line in fp:
+	    strs.append(line)
 
-# Finding all the tweets with the specified words
-Witswords = ['Wits', 'University of the Witswatersrand', 'Wits University', 'wits'] #Words of a paremeter
-Wits = [s for s in strs if any(xs in s for xs in Witswords)]
+	# Finding all the tweets with the specified words
+	Witswords = ['Wits', 'University of the Witswatersrand', 'Wits University', 'wits'] #Words of a paremeter
+	Wits = [s for s in strs if any(xs in s for xs in Witswords)]
 
-WitsPwords = ['WitsProtests']
-Witsprotests = [s for s in strs if any(xs in s for xs in WitsPwords)]
+	WitsPwords = ['WitsProtests']
+	Witsprotests = [s for s in strs if any(xs in s for xs in WitsPwords)]
 
-Protestwords = ['protests', 'Protests', 'Protest', 'protest']
-Protests = [s for s in strs if any(xs in s for xs in Protestwords)]
+	Protestwords = ['protests', 'Protests', 'Protest', 'protest']
+	Protests = [s for s in strs if any(xs in s for xs in Protestwords)]
 
-Upretoria = ['Tuks', 'UP', 'University of Pretoria', 'university of pretoria']
-UP = [s for s in strs if any(xs in s for xs in Upretoria)]
+	Upretoria = ['Tuks', 'UP', 'University of Pretoria', 'university of pretoria']
+	UP = [s for s in strs if any(xs in s for xs in Upretoria)]
 
-uct = ['uct', 'UCT', 'University of Cape Town']
-UCT = [s for s in strs if any(xs in s for xs in uct)]
+	uct = ['uct', 'UCT', 'University of Cape Town']
+	UCT = [s for s in strs if any(xs in s for xs in uct)]
 
-AHab = ['Adam','Habib','A Habib']
-Adam = [s for s in strs if any(xs in s for xs in AHab)]
+	AHab = ['Adam','Habib','A Habib']
+	Adam = [s for s in strs if any(xs in s for xs in AHab)]
 
-for s in Wits:
-    a = analysis(s)
-    print (a)
+	for s in Wits:
+	    a = analysis(s)
+	    print (a)
 
-for s in Witsprotests:
-    a = analysis(s)
-    print (a)
+	for s in Witsprotests:
+	    a = analysis(s)
+	    print (a)
 
-for s in Protests:
-    a = analysis(s)
-    print (a)
+	for s in Protests:
+	    a = analysis(s)
+	    print (a)
 
-for s in UP:
-    a = analysis(s)
-    print (a)
+	for s in UP:
+	    a = analysis(s)
+	    print (a)
 
-for s in UCT:
-    a = analysis(s)
-    print (a)
-    
-for s in Adam:
-    a = analysis(s)
-    print (a)
+	for s in UCT:
+	    a = analysis(s)
+	    print (a)
+	    
+	for s in Adam:
+	    a = analysis(s)
+	    print (a)
