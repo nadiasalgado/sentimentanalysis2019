@@ -1,4 +1,24 @@
 from textblob import TextBlob #Make sure you correctly install textblob
+import tweepy #you must install tweepy
+from tweepy import OAuthHandler 
+
+def __init__(self): #Class constructor
+	# secret keys and tokens to access API
+    consumer_key = "8SnGnIiZFm8kEHrmeLndpHiZD"
+    consumer_secret = "2GtcWlDslfdemvOKL3i09T0p6HqbZ3JEO9ix8032HepyLs2hKj"
+    access_token = "1105194942815707136-jNcbwDQR6hfyh0MuLY1gVeszR01hy3"
+    access_token_secret = "BklBxUF4fsCQwEKNCBmBxFMqcqhFWGhrJEygbrJbnlMzP"
+  
+    # attempt authentication 
+    try: 
+        # create OAuthHandler object 
+        self.auth = OAuthHandler(consumer_key, consumer_secret) 
+        # set access token and secret 
+        self.auth.set_access_token(access_token, access_token_secret) 
+        # create tweepy API object to fetch tweets 
+        self.api = tweepy.API(self.auth) 
+    except: 
+        print("Error: Authentication Failed") 
 
 #Basic sentiment analysis function
 def analysis(str):
@@ -10,8 +30,6 @@ def analysis(str):
         return 'neutral'
     else:
         return 'negative'
-
-
 
 # Main function to perform the sentiment analysis of hardcoded fake tweets in the TestTweets.txt file
 
