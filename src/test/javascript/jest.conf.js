@@ -1,7 +1,6 @@
 module.exports = {
     preset: 'jest-preset-angular',
     setupTestFrameworkScriptFile: '<rootDir>/src/test/javascript/jest.ts',
-    collectCoverage: true,
     coverageDirectory: '<rootDir>/target/test-results/',
     globals: {
         'ts-jest': {
