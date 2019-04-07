@@ -1,0 +1,7 @@
+Wits,UP,UCT,WitsProtests,Protests,Adam
+positive,positive,positive, ,positive,positive
+positive,positive,negative, ,positive, 
+positive,negative,neutral, ,positive, 
+positive,negative,neutral, ,negative, 
+neutral,neutral, , , , 
+negative,neutral, , , , 
