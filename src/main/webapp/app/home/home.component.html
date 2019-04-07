@@ -12,6 +12,9 @@
                    > You are logged in as user "{{account.login}}". </span>
             </div>
 
+            <h2>A Histogram showing the tweet sentiment for the headings</h2>
+                <img src="sentiment_analysis_graph.png" alt="Trulli" width="700" height="400">
+
             <div class="alert alert-warning" *ngSwitchCase="false">
                 <span>If you want to </span>
                 <a class="alert-link" (click)="login()">sign in</a><span>, you can try the default accounts:<br/>- Administrator (login="admin" and password="admin") <br/>- User (login="user" and password="user").</span>
