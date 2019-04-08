@@ -2,6 +2,10 @@
 def show(x):
     
     with open('TestTweets.txt') as fp:
-        for line in fp:
+
+    	output = []
+		
+		for line in fp:
             if x in line:
-                print(line)
+                output.append(line.rstrip())
+    return output

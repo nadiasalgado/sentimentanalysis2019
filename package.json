@@ -48,6 +48,7 @@
         "codelyzer": "4.5.0",
         "copy-webpack-plugin": "4.6.0",
         "css-loader": "2.1.0",
+        "coveralls": "3.0.3",
         "file-loader": "3.0.1",
         "fork-ts-checker-webpack-plugin": "0.5.2",
         "friendly-errors-webpack-plugin": "1.7.0",
