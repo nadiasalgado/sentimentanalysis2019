@@ -1,0 +1,45 @@
+Viewpoints
+
+Def 1: A viewpoint is a collection of patterns, templates, and  conventions for constructing one type of view. It defines the stakeholders whose concerns are reflected in the viewpoint and the guidelines, principles, and template models for constructing its views.
+
+Def 2: A viewpoint is a way of organising the requirements for a software system, based on some perspective such as an end-user perspective or a manager's perspective.
+
+Logical View:
+    Viewer: End user
+    As a service the system provides the results of the specific topic that the user has picked for sentiment analysis(functional requirements)	
+
+Process View:
+    Viewer: Integrator
+
+Physical View:
+    Viewer: System engineer
+    Deployment diagram
+
+Development View:
+    Viewer: Programmer
+
+Use case View:
+    Viewer: All
+
+*****************************************************************************************
+
+Functional Viewpoint:
+    Send an email when a new user signs up (confirmation)
+    Search a topic and view its sentiment analysis
+
+Information Viewpoint:
+    View sentiment analysis results as a form of a graph
+    Store sentiment analysis data in the database
+    Store user information in the database
+
+Concurrency Viewpoint:
+    The graphs of different topics show at the same time (realtime)
+
+Development Viewpoint:
+    Code(different languages)
+
+Deployment Viewpoint:
+    The system will be deployed in a web application. JHipster will be used to do so
+
+Operational Viewpoint:
+    The team will have meetings to discuss any change to the system
