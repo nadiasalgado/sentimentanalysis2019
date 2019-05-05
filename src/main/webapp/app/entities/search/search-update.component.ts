@@ -3,8 +3,6 @@ import { ActivatedRoute } from '@angular/router';
 import { HttpResponse, HttpErrorResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { filter, map } from 'rxjs/operators';
-import * as moment from 'moment';
-import { DATE_TIME_FORMAT } from 'app/shared/constants/input.constants';
 import { ISearch } from 'app/shared/model/search.model';
 import { SearchService } from './search.service';
 
@@ -15,8 +13,6 @@ import { SearchService } from './search.service';
 export class SearchUpdateComponent implements OnInit {
     search: ISearch;
     isSaving: boolean;
-    lastSearch: string;
-    slastSearch: string;
 
     constructor(protected searchService: SearchService, protected activatedRoute: ActivatedRoute) {}
 
@@ -24,8 +20,6 @@ export class SearchUpdateComponent implements OnInit {
         this.isSaving = false;
         this.activatedRoute.data.subscribe(({ search }) => {
             this.search = search;
-            this.lastSearch = this.search.lastSearch != null ? this.search.lastSearch.format(DATE_TIME_FORMAT) : null;
-            this.slastSearch = this.search.slastSearch != null ? this.search.slastSearch.format(DATE_TIME_FORMAT) : null;
         });
     }
 
@@ -35,8 +29,6 @@ export class SearchUpdateComponent implements OnInit {
 
     save() {
         this.isSaving = true;
-        this.search.lastSearch = this.lastSearch != null ? moment(this.lastSearch, DATE_TIME_FORMAT) : null;
-        this.search.slastSearch = this.slastSearch != null ? moment(this.slastSearch, DATE_TIME_FORMAT) : null;
         if (this.search.id !== undefined) {
             this.subscribeToSaveResponse(this.searchService.update(this.search));
         } else {

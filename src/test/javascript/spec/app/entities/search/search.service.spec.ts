@@ -4,10 +4,8 @@ import { HttpClientTestingModule, HttpTestingController } from '@angular/common/
 import { HttpClient, HttpResponse } from '@angular/common/http';
 import { of } from 'rxjs';
 import { take, map } from 'rxjs/operators';
-import * as moment from 'moment';
-import { DATE_TIME_FORMAT } from 'app/shared/constants/input.constants';
 import { SearchService } from 'app/entities/search/search.service';
-import { ISearch, Search, Searchlang } from 'app/shared/model/search.model';
+import { ISearch, Search } from 'app/shared/model/search.model';
 
 describe('Service Tests', () => {
     describe('Search Service', () => {
@@ -15,7 +13,6 @@ describe('Service Tests', () => {
         let service: SearchService;
         let httpMock: HttpTestingController;
         let elemDefault: ISearch;
-        let currentDate: moment.Moment;
         beforeEach(() => {
             TestBed.configureTestingModule({
                 imports: [HttpClientTestingModule]
@@ -23,20 +20,13 @@ describe('Service Tests', () => {
             injector = getTestBed();
             service = injector.get(SearchService);
             httpMock = injector.get(HttpTestingController);
-            currentDate = moment();
 
-            elemDefault = new Search(0, 'AAAAAAA', currentDate, currentDate, Searchlang.ENGLISH);
+            elemDefault = new Search(0);
         });
 
         describe('Service methods', async () => {
             it('should find an element', async () => {
-                const returnedFromService = Object.assign(
-                    {
-                        lastSearch: currentDate.format(DATE_TIME_FORMAT),
-                        slastSearch: currentDate.format(DATE_TIME_FORMAT)
-                    },
-                    elemDefault
-                );
+                const returnedFromService = Object.assign({}, elemDefault);
                 service
                     .find(123)
                     .pipe(take(1))
@@ -49,19 +39,11 @@ describe('Service Tests', () => {
             it('should create a Search', async () => {
                 const returnedFromService = Object.assign(
                     {
-                        id: 0,
-                        lastSearch: currentDate.format(DATE_TIME_FORMAT),
-                        slastSearch: currentDate.format(DATE_TIME_FORMAT)
+                        id: 0
                     },
                     elemDefault
                 );
-                const expected = Object.assign(
-                    {
-                        lastSearch: currentDate,
-                        slastSearch: currentDate
-                    },
-                    returnedFromService
-                );
+                const expected = Object.assign({}, returnedFromService);
                 service
                     .create(new Search(null))
                     .pipe(take(1))
@@ -71,23 +53,9 @@ describe('Service Tests', () => {
             });
 
             it('should update a Search', async () => {
-                const returnedFromService = Object.assign(
-                    {
-                        search: 'BBBBBB',
-                        lastSearch: currentDate.format(DATE_TIME_FORMAT),
-                        slastSearch: currentDate.format(DATE_TIME_FORMAT),
-                        language: 'BBBBBB'
-                    },
-                    elemDefault
-                );
+                const returnedFromService = Object.assign({}, elemDefault);
 
-                const expected = Object.assign(
-                    {
-                        lastSearch: currentDate,
-                        slastSearch: currentDate
-                    },
-                    returnedFromService
-                );
+                const expected = Object.assign({}, returnedFromService);
                 service
                     .update(expected)
                     .pipe(take(1))
@@ -97,22 +65,8 @@ describe('Service Tests', () => {
             });
 
             it('should return a list of Search', async () => {
-                const returnedFromService = Object.assign(
-                    {
-                        search: 'BBBBBB',
-                        lastSearch: currentDate.format(DATE_TIME_FORMAT),
-                        slastSearch: currentDate.format(DATE_TIME_FORMAT),
-                        language: 'BBBBBB'
-                    },
-                    elemDefault
-                );
-                const expected = Object.assign(
-                    {
-                        lastSearch: currentDate,
-                        slastSearch: currentDate
-                    },
-                    returnedFromService
-                );
+                const returnedFromService = Object.assign({}, elemDefault);
+                const expected = Object.assign({}, returnedFromService);
                 service
                     .query(expected)
                     .pipe(

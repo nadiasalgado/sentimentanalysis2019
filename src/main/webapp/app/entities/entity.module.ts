@@ -15,6 +15,14 @@ import { RouterModule } from '@angular/router';
             {
                 path: 'user-profile',
                 loadChildren: './user-profile/user-profile.module#Sentimentanalysis2019UserProfileModule'
+            },
+            {
+                path: 'user-profile',
+                loadChildren: './user-profile/user-profile.module#Sentimentanalysis2019UserProfileModule'
+            },
+            {
+                path: 'search',
+                loadChildren: './search/search.module#Sentimentanalysis2019SearchModule'
             }
             /* jhipster-needle-add-entity-route - JHipster will add entity modules routes here */
         ])

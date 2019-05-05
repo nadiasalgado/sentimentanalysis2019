@@ -2,26 +2,7 @@
     "fluentMethods": true,
     "clientRootFolder": "",
     "relationships": [],
-    "fields": [
-        {
-            "fieldName": "search",
-            "fieldType": "String"
-        },
-        {
-            "fieldName": "lastSearch",
-            "fieldType": "Instant"
-        },
-        {
-            "fieldName": "slastSearch",
-            "fieldType": "Instant"
-        },
-        {
-            "fieldName": "language",
-            "fieldType": "Searchlang",
-            "fieldValues": "ENGLISH,FRENCH,SPANISH,DUTCH",
-            "fieldValidateRules": []
-        }
-    ],
+    "fields": [],
     "changelogDate": "20190505115050",
     "dto": "no",
     "searchEngine": false,

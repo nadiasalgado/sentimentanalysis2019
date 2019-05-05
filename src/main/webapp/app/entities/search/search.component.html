@@ -15,20 +15,12 @@
             <thead>
             <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
             <th jhiSortBy="id"><span>ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th jhiSortBy="search"><span>Search</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th jhiSortBy="lastSearch"><span>Last Search</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th jhiSortBy="slastSearch"><span>Slast Search</span> <fa-icon [icon]="'sort'"></fa-icon></th>
-            <th jhiSortBy="language"><span>Language</span> <fa-icon [icon]="'sort'"></fa-icon></th>
             <th></th>
             </tr>
             </thead>
             <tbody>
             <tr *ngFor="let search of searches ;trackBy: trackId">
                 <td><a [routerLink]="['/search', search.id, 'view' ]">{{search.id}}</a></td>
-                <td>{{search.search}}</td>
-                <td>{{search.lastSearch | date:'medium'}}</td>
-                <td>{{search.slastSearch | date:'medium'}}</td>
-                <td>{{search.language}}</td>
                 <td class="text-right">
                     <div class="btn-group flex-btn-group-container">
                         <button type="submit"

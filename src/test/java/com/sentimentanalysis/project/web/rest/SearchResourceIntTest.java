@@ -22,8 +22,6 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.validation.Validator;
 
 import javax.persistence.EntityManager;
-import java.time.Instant;
-import java.time.temporal.ChronoUnit;
 import java.util.List;
 
 
@@ -33,7 +31,6 @@ import static org.hamcrest.Matchers.hasItem;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
-import com.sentimentanalysis.project.domain.enumeration.Searchlang;
 /**
  * Test class for the SearchResource REST controller.
  *
@@ -42,18 +39,6 @@ import com.sentimentanalysis.project.domain.enumeration.Searchlang;
 @RunWith(SpringRunner.class)
 @SpringBootTest(classes = Sentimentanalysis2019App.class)
 public class SearchResourceIntTest {
-
-    private static final String DEFAULT_SEARCH = "AAAAAAAAAA";
-    private static final String UPDATED_SEARCH = "BBBBBBBBBB";
-
-    private static final Instant DEFAULT_LAST_SEARCH = Instant.ofEpochMilli(0L);
-    private static final Instant UPDATED_LAST_SEARCH = Instant.now().truncatedTo(ChronoUnit.MILLIS);
-
-    private static final Instant DEFAULT_SLAST_SEARCH = Instant.ofEpochMilli(0L);
-    private static final Instant UPDATED_SLAST_SEARCH = Instant.now().truncatedTo(ChronoUnit.MILLIS);
-
-    private static final Searchlang DEFAULT_LANGUAGE = Searchlang.ENGLISH;
-    private static final Searchlang UPDATED_LANGUAGE = Searchlang.FRENCH;
 
     @Autowired
     private SearchRepository searchRepository;
@@ -96,11 +81,7 @@ public class SearchResourceIntTest {
      * if they test an entity which requires the current entity.
      */
     public static Search createEntity(EntityManager em) {
-        Search search = new Search()
-            .search(DEFAULT_SEARCH)
-            .lastSearch(DEFAULT_LAST_SEARCH)
-            .slastSearch(DEFAULT_SLAST_SEARCH)
-            .language(DEFAULT_LANGUAGE);
+        Search search = new Search();
         return search;
     }
 
@@ -124,10 +105,6 @@ public class SearchResourceIntTest {
         List<Search> searchList = searchRepository.findAll();
         assertThat(searchList).hasSize(databaseSizeBeforeCreate + 1);
         Search testSearch = searchList.get(searchList.size() - 1);
-        assertThat(testSearch.getSearch()).isEqualTo(DEFAULT_SEARCH);
-        assertThat(testSearch.getLastSearch()).isEqualTo(DEFAULT_LAST_SEARCH);
-        assertThat(testSearch.getSlastSearch()).isEqualTo(DEFAULT_SLAST_SEARCH);
-        assertThat(testSearch.getLanguage()).isEqualTo(DEFAULT_LANGUAGE);
     }
 
     @Test
@@ -159,11 +136,7 @@ public class SearchResourceIntTest {
         restSearchMockMvc.perform(get("/api/searches?sort=id,desc"))
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
-            .andExpect(jsonPath("$.[*].id").value(hasItem(search.getId().intValue())))
-            .andExpect(jsonPath("$.[*].search").value(hasItem(DEFAULT_SEARCH.toString())))
-            .andExpect(jsonPath("$.[*].lastSearch").value(hasItem(DEFAULT_LAST_SEARCH.toString())))
-            .andExpect(jsonPath("$.[*].slastSearch").value(hasItem(DEFAULT_SLAST_SEARCH.toString())))
-            .andExpect(jsonPath("$.[*].language").value(hasItem(DEFAULT_LANGUAGE.toString())));
+            .andExpect(jsonPath("$.[*].id").value(hasItem(search.getId().intValue())));
     }
     
     @Test
@@ -176,11 +149,7 @@ public class SearchResourceIntTest {
         restSearchMockMvc.perform(get("/api/searches/{id}", search.getId()))
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
-            .andExpect(jsonPath("$.id").value(search.getId().intValue()))
-            .andExpect(jsonPath("$.search").value(DEFAULT_SEARCH.toString()))
-            .andExpect(jsonPath("$.lastSearch").value(DEFAULT_LAST_SEARCH.toString()))
-            .andExpect(jsonPath("$.slastSearch").value(DEFAULT_SLAST_SEARCH.toString()))
-            .andExpect(jsonPath("$.language").value(DEFAULT_LANGUAGE.toString()));
+            .andExpect(jsonPath("$.id").value(search.getId().intValue()));
     }
 
     @Test
@@ -203,11 +172,6 @@ public class SearchResourceIntTest {
         Search updatedSearch = searchRepository.findById(search.getId()).get();
         // Disconnect from session so that the updates on updatedSearch are not directly saved in db
         em.detach(updatedSearch);
-        updatedSearch
-            .search(UPDATED_SEARCH)
-            .lastSearch(UPDATED_LAST_SEARCH)
-            .slastSearch(UPDATED_SLAST_SEARCH)
-            .language(UPDATED_LANGUAGE);
 
         restSearchMockMvc.perform(put("/api/searches")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
@@ -218,10 +182,6 @@ public class SearchResourceIntTest {
         List<Search> searchList = searchRepository.findAll();
         assertThat(searchList).hasSize(databaseSizeBeforeUpdate);
         Search testSearch = searchList.get(searchList.size() - 1);
-        assertThat(testSearch.getSearch()).isEqualTo(UPDATED_SEARCH);
-        assertThat(testSearch.getLastSearch()).isEqualTo(UPDATED_LAST_SEARCH);
-        assertThat(testSearch.getSlastSearch()).isEqualTo(UPDATED_SLAST_SEARCH);
-        assertThat(testSearch.getLanguage()).isEqualTo(UPDATED_LANGUAGE);
     }
 
     @Test

@@ -5,7 +5,7 @@ import { HttpClient, HttpResponse } from '@angular/common/http';
 import { of } from 'rxjs';
 import { take, map } from 'rxjs/operators';
 import { UserProfileService } from 'app/entities/user-profile/user-profile.service';
-import { IUserProfile, UserProfile, Sexoption, Countrylist } from 'app/shared/model/user-profile.model';
+import { IUserProfile, UserProfile } from 'app/shared/model/user-profile.model';
 
 describe('Service Tests', () => {
     describe('UserProfile Service', () => {
@@ -21,18 +21,7 @@ describe('Service Tests', () => {
             service = injector.get(UserProfileService);
             httpMock = injector.get(HttpTestingController);
 
-            elemDefault = new UserProfile(
-                0,
-                'AAAAAAA',
-                'AAAAAAA',
-                'AAAAAAA',
-                0,
-                'AAAAAAA',
-                Sexoption.FEMALE,
-                0,
-                'AAAAAAA',
-                Countrylist.ARGENTINA
-            );
+            elemDefault = new UserProfile(0);
         });
 
         describe('Service methods', async () => {
@@ -64,20 +53,7 @@ describe('Service Tests', () => {
             });
 
             it('should update a UserProfile', async () => {
-                const returnedFromService = Object.assign(
-                    {
-                        firstName: 'BBBBBB',
-                        lastName: 'BBBBBB',
-                        userName: 'BBBBBB',
-                        age: 1,
-                        email: 'BBBBBB',
-                        sex: 'BBBBBB',
-                        phone: 1,
-                        organization: 'BBBBBB',
-                        country: 'BBBBBB'
-                    },
-                    elemDefault
-                );
+                const returnedFromService = Object.assign({}, elemDefault);
 
                 const expected = Object.assign({}, returnedFromService);
                 service
@@ -89,20 +65,7 @@ describe('Service Tests', () => {
             });
 
             it('should return a list of UserProfile', async () => {
-                const returnedFromService = Object.assign(
-                    {
-                        firstName: 'BBBBBB',
-                        lastName: 'BBBBBB',
-                        userName: 'BBBBBB',
-                        age: 1,
-                        email: 'BBBBBB',
-                        sex: 'BBBBBB',
-                        phone: 1,
-                        organization: 'BBBBBB',
-                        country: 'BBBBBB'
-                    },
-                    elemDefault
-                );
+                const returnedFromService = Object.assign({}, elemDefault);
                 const expected = Object.assign({}, returnedFromService);
                 service
                     .query(expected)
