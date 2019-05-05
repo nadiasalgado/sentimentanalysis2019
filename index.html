@@ -6,12 +6,9 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-
   <title>Sentiment Analysis Results</title>
-
 </head>
 <body>
-
   <div class="container">
     <canvas id="myChart"></canvas>
   </div>
@@ -19,23 +16,22 @@
   <script>
     let myChart = document.getElementById('myChart').getContext('2d');
 
-    // Global Options
     Chart.defaults.global.defaultFontFamily = 'Lato';
     Chart.defaults.global.defaultFontSize = 18;
     Chart.defaults.global.defaultFontColor = '#777';
 
-    let topicChart = new Chart(myChart, {
+    let massPopChart = new Chart(myChart, {
       type:'bar',
       data:{
         labels:['Negative', 'Neutral', 'Positive'],
         datasets:[{
           label:'Tweets',
           data:[
-            17,
             13,
-            25,
+            7,
+            21,
           ],
-        
+          
           backgroundColor:[
             'rgba(255, 99, 132, 0.6)',
             'rgba(54, 162, 235, 0.6)',
@@ -52,6 +48,15 @@
           display:true,
           text:'Sentiment Analysis Results',
           fontSize:25
+        },
+        scales: {
+
+            yAxes: [{
+            scaleLabel: {
+            display: true,
+            labelString: 'Number of tweets'
+            }
+            }]
         },
         legend:{
           display:true,
@@ -71,6 +76,7 @@
         tooltips:{
           enabled:true
         }
+        
       }
     });
   </script>
