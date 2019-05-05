@@ -10,10 +10,12 @@
             <div class="alert alert-success" *ngSwitchCase="true">
                 <span id="home-logged-message" *ngIf="account"
                    > You are logged in as user "{{account.login}}". </span>
-                <h2>A Histogram showing the tweet sentiment for the headings</h2>
-                    <img src="sentiment_analysis_graph.png" alt="Trulli" width="700" height="400">
+                <span><br/><br/>Enter a keyword for Sentiment Analysis</span>
+                <form class="form">
+                    <input type="email" id="twitterKey" class="form__field" placeholder="Keyword" />
+                    <button type="button" class="btn btn--primary btn--inside uppercase" onClick="javascript: window.open('https://13unyx62q3.execute-api.us-east-1.amazonaws.com/deploy/topic?keyword=' + document.getElementById('twitterKey').value);">Analyze</button>
+                </form>
             </div>
-
             
 
             <div class="alert alert-warning" *ngSwitchCase="false">
