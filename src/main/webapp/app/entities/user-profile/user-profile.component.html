@@ -1,0 +1,78 @@
+<div>
+    <h2 id="page-heading">
+        <span>User Profiles</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-user-profile" [routerLink]="['/user-profile/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span >
+            Create new User Profile
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="userProfiles">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span>ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="firstName"><span>First Name</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="lastName"><span>Last Name</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="userName"><span>User Name</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="age"><span>Age</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="email"><span>Email</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="sex"><span>Sex</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="phone"><span>Phone</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="organization"><span>Organization</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="country"><span>Country</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let userProfile of userProfiles ;trackBy: trackId">
+                <td><a [routerLink]="['/user-profile', userProfile.id, 'view' ]">{{userProfile.id}}</a></td>
+                <td>{{userProfile.firstName}}</td>
+                <td>{{userProfile.lastName}}</td>
+                <td>{{userProfile.userName}}</td>
+                <td>{{userProfile.age}}</td>
+                <td>{{userProfile.email}}</td>
+                <td>{{userProfile.sex}}</td>
+                <td>{{userProfile.phone}}</td>
+                <td>{{userProfile.organization}}</td>
+                <td>{{userProfile.country}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/user-profile', userProfile.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/user-profile', userProfile.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', 'user-profile', { outlets: { popup: userProfile.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="userProfiles && userProfiles.length">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="totalItems" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

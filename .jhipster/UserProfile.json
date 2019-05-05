@@ -1,0 +1,69 @@
+{
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "relationships": [
+        {
+            "relationshipName": "usersearch",
+            "otherEntityName": "search",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "usersearch",
+            "otherEntityRelationshipNameUndefined": false
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "firstName",
+            "fieldType": "String",
+            "fieldValidateRules": []
+        },
+        {
+            "fieldName": "lastName",
+            "fieldType": "String",
+            "fieldValidateRules": []
+        },
+        {
+            "fieldName": "userName",
+            "fieldType": "String",
+            "fieldValidateRules": []
+        },
+        {
+            "fieldName": "age",
+            "fieldType": "Integer",
+            "fieldValidateRules": []
+        },
+        {
+            "fieldName": "email",
+            "fieldType": "String",
+            "fieldValidateRules": []
+        },
+        {
+            "fieldName": "sex",
+            "fieldType": "Sexoption",
+            "fieldValues": "FEMALE,MALE,OTHER",
+            "fieldValidateRules": []
+        },
+        {
+            "fieldName": "phone",
+            "fieldType": "Integer",
+            "fieldValidateRules": []
+        },
+        {
+            "fieldName": "organization",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "country",
+            "fieldType": "Countrylist",
+            "fieldValues": "ARGENTINA,ALGERIA,ANGOLA,BELGIUM,BOTSWANA,BRAZIL,CAMEROON,CANADA,CHINA,EGYPYT,ETHOPIA,FRANCE,GABON,GERMANY,GHANA,ISRAEL,ITALY,JAMAICA,JAPAN,KENYA,LESOTHO,LIBERIA,LIBYA,MALI,MAURITIUS,MEXICO,MOROCCO,MOZAMBIQUE,NAMIBIA,NETHERLANDS,NIGER,NIGERIA,PARAGUAY,PHILIPPINES,PORTUGAL,RUSSIA,RWANDA,SAUDI_ARABIA,SENEGAL,SOMALIA,SOUTH_AFRICA,SPAIN,SWAZILAND,SWEDEN,SWITZERLAND,TANZANIA,TUNISIA,UGANDA,UNITED_KINGDOM,VENEZUAL,YEMEN,ZAMBIA,ZIMBWAWE",
+            "fieldValidateRules": []
+        }
+    ],
+    "changelogDate": "20190505115548",
+    "dto": "no",
+    "searchEngine": false,
+    "service": "no",
+    "entityTableName": "user_profile",
+    "databaseType": "sql",
+    "jpaMetamodelFiltering": false,
+    "pagination": "pagination"
+}
