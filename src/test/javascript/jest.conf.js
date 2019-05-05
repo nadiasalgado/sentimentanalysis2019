@@ -1,4 +1,5 @@
 module.exports = {
+    "verbose": true,
     preset: 'jest-preset-angular',
     setupTestFrameworkScriptFile: '<rootDir>/src/test/javascript/jest.ts',
     collectCoverage: true,
