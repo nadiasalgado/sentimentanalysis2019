@@ -3,7 +3,7 @@ import { ComponentFixture, TestBed, fakeAsync, tick } from '@angular/core/testin
 import { HttpResponse } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 
-import { Sentimentanalysis2019TestModule } from '../../../test.module';
+import { EntityTestTestModule } from '../../../test.module';
 import { SearchUpdateComponent } from 'app/entities/search/search-update.component';
 import { SearchService } from 'app/entities/search/search.service';
 import { Search } from 'app/shared/model/search.model';
@@ -16,7 +16,7 @@ describe('Component Tests', () => {
 
         beforeEach(() => {
             TestBed.configureTestingModule({
-                imports: [Sentimentanalysis2019TestModule],
+                imports: [EntityTestTestModule],
                 declarations: [SearchUpdateComponent]
             })
                 .overrideTemplate(SearchUpdateComponent, '')

@@ -3,7 +3,7 @@ import { Observable, of, throwError } from 'rxjs';
 import { Renderer, ElementRef } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
-import { Sentimentanalysis2019TestModule } from '../../../../test.module';
+import { EntityTestTestModule } from '../../../../test.module';
 import { PasswordResetFinishComponent } from 'app/account/password-reset/finish/password-reset-finish.component';
 import { PasswordResetFinishService } from 'app/account/password-reset/finish/password-reset-finish.service';
 import { MockActivatedRoute } from '../../../../helpers/mock-route.service';
@@ -15,7 +15,7 @@ describe('Component Tests', () => {
 
         beforeEach(() => {
             fixture = TestBed.configureTestingModule({
-                imports: [Sentimentanalysis2019TestModule],
+                imports: [EntityTestTestModule],
                 declarations: [PasswordResetFinishComponent],
                 providers: [
                     {

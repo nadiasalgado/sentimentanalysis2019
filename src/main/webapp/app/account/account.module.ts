@@ -1,7 +1,7 @@
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
-import { Sentimentanalysis2019SharedModule } from 'app/shared';
+import { EntityTestSharedModule } from 'app/shared';
 
 import {
     PasswordStrengthBarComponent,
@@ -15,7 +15,7 @@ import {
 } from './';
 
 @NgModule({
-    imports: [Sentimentanalysis2019SharedModule, RouterModule.forChild(accountState)],
+    imports: [EntityTestSharedModule, RouterModule.forChild(accountState)],
     declarations: [
         ActivateComponent,
         RegisterComponent,
@@ -27,4 +27,4 @@ import {
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class Sentimentanalysis2019AccountModule {}
+export class EntityTestAccountModule {}

@@ -11,7 +11,7 @@ const LAYOUT_ROUTES = [navbarRoute, ...errorRoute];
             [
                 {
                     path: 'admin',
-                    loadChildren: './admin/admin.module#Sentimentanalysis2019AdminModule'
+                    loadChildren: './admin/admin.module#EntityTestAdminModule'
                 },
                 ...LAYOUT_ROUTES
             ],
@@ -20,4 +20,4 @@ const LAYOUT_ROUTES = [navbarRoute, ...errorRoute];
     ],
     exports: [RouterModule]
 })
-export class Sentimentanalysis2019AppRoutingModule {}
+export class EntityTestAppRoutingModule {}

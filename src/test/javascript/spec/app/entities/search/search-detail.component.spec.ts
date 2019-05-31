@@ -3,7 +3,7 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { ActivatedRoute } from '@angular/router';
 import { of } from 'rxjs';
 
-import { Sentimentanalysis2019TestModule } from '../../../test.module';
+import { EntityTestTestModule } from '../../../test.module';
 import { SearchDetailComponent } from 'app/entities/search/search-detail.component';
 import { Search } from 'app/shared/model/search.model';
 
@@ -15,7 +15,7 @@ describe('Component Tests', () => {
 
         beforeEach(() => {
             TestBed.configureTestingModule({
-                imports: [Sentimentanalysis2019TestModule],
+                imports: [EntityTestTestModule],
                 declarations: [SearchDetailComponent],
                 providers: [{ provide: ActivatedRoute, useValue: route }]
             })

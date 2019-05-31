@@ -4,7 +4,7 @@ import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { Observable, of } from 'rxjs';
 import { JhiEventManager } from 'ng-jhipster';
 
-import { Sentimentanalysis2019TestModule } from '../../../test.module';
+import { EntityTestTestModule } from '../../../test.module';
 import { SearchDeleteDialogComponent } from 'app/entities/search/search-delete-dialog.component';
 import { SearchService } from 'app/entities/search/search.service';
 
@@ -18,7 +18,7 @@ describe('Component Tests', () => {
 
         beforeEach(() => {
             TestBed.configureTestingModule({
-                imports: [Sentimentanalysis2019TestModule],
+                imports: [EntityTestTestModule],
                 declarations: [SearchDeleteDialogComponent]
             })
                 .overrideTemplate(SearchDeleteDialogComponent, '')

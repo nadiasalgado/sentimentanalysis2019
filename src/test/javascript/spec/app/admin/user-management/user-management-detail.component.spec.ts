@@ -2,7 +2,7 @@ import { ComponentFixture, TestBed, async } from '@angular/core/testing';
 import { ActivatedRoute } from '@angular/router';
 import { of } from 'rxjs';
 
-import { Sentimentanalysis2019TestModule } from '../../../test.module';
+import { EntityTestTestModule } from '../../../test.module';
 import { UserMgmtDetailComponent } from 'app/admin/user-management/user-management-detail.component';
 import { User } from 'app/core';
 
@@ -16,7 +16,7 @@ describe('Component Tests', () => {
 
         beforeEach(async(() => {
             TestBed.configureTestingModule({
-                imports: [Sentimentanalysis2019TestModule],
+                imports: [EntityTestTestModule],
                 declarations: [UserMgmtDetailComponent],
                 providers: [
                     {

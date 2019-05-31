@@ -22,7 +22,7 @@ export class JhiAlertErrorComponent implements OnDestroy {
         /* tslint:enable */
         this.alerts = [];
 
-        this.cleanHttpErrorListener = eventManager.subscribe('sentimentanalysis2019App.httpError', response => {
+        this.cleanHttpErrorListener = eventManager.subscribe('entityTestApp.httpError', response => {
             let i;
             const httpErrorResponse = response.content;
             switch (httpErrorResponse.status) {

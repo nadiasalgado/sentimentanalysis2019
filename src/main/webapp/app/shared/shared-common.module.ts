@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 
-import { Sentimentanalysis2019SharedLibsModule, JhiAlertComponent, JhiAlertErrorComponent } from './';
+import { EntityTestSharedLibsModule, JhiAlertComponent, JhiAlertErrorComponent } from './';
 
 @NgModule({
-    imports: [Sentimentanalysis2019SharedLibsModule],
+    imports: [EntityTestSharedLibsModule],
     declarations: [JhiAlertComponent, JhiAlertErrorComponent],
-    exports: [Sentimentanalysis2019SharedLibsModule, JhiAlertComponent, JhiAlertErrorComponent]
+    exports: [EntityTestSharedLibsModule, JhiAlertComponent, JhiAlertErrorComponent]
 })
-export class Sentimentanalysis2019SharedCommonModule {}
+export class EntityTestSharedCommonModule {}

@@ -3,14 +3,14 @@
     "version": 1,
     "newProjectRoot": "projects",
     "projects": {
-        "sentimentanalysis-2019": {
+        "entity-test": {
             "root": "",
             "sourceRoot": "src/main/webapp",
             "projectType": "application",
             "architect": {}
         }
     },
-    "defaultProject": "sentimentanalysis-2019",
+    "defaultProject": "entity-test",
     "cli": {
         "packageManager": "npm"
     },

@@ -1,7 +1,7 @@
 import { ComponentFixture, TestBed, async } from '@angular/core/testing';
 import { Observable, throwError } from 'rxjs';
 
-import { Sentimentanalysis2019TestModule } from '../../../test.module';
+import { EntityTestTestModule } from '../../../test.module';
 import { AccountService } from 'app/core';
 import { SettingsComponent } from 'app/account/settings/settings.component';
 
@@ -13,7 +13,7 @@ describe('Component Tests', () => {
 
         beforeEach(async(() => {
             TestBed.configureTestingModule({
-                imports: [Sentimentanalysis2019TestModule],
+                imports: [EntityTestTestModule],
                 declarations: [SettingsComponent],
                 providers: []
             })

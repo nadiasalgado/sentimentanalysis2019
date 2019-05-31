@@ -1,6 +1,6 @@
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { ProdConfig } from './blocks/config/prod.config';
-import { Sentimentanalysis2019AppModule } from './app.module';
+import { EntityTestAppModule } from './app.module';
 
 ProdConfig();
 
@@ -9,6 +9,6 @@ if (module['hot']) {
 }
 
 platformBrowserDynamic()
-    .bootstrapModule(Sentimentanalysis2019AppModule, { preserveWhitespaces: true })
+    .bootstrapModule(EntityTestAppModule, { preserveWhitespaces: true })
     .then(success => console.log(`Application started`))
     .catch(err => console.error(err));

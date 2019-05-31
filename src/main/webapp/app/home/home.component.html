@@ -10,13 +10,39 @@
             <div class="alert alert-success" *ngSwitchCase="true">
                 <span id="home-logged-message" *ngIf="account"
                    > You are logged in as user "{{account.login}}". </span>
-                <span><br/><br/>Enter a keyword for Sentiment Analysis</span>
+                <span><br/><br/>Enter a keyword for Sentiment Analysis<br/><br/></span>
                 <form class="form">
-                    <input type="email" id="twitterKey" class="form__field" placeholder="Keyword" />
-                    <button type="button" class="btn btn--primary btn--inside uppercase" onClick="javascript: window.open('https://13unyx62q3.execute-api.us-east-1.amazonaws.com/deploy/topic?keyword=' + document.getElementById('twitterKey').value);">Analyze</button>
+                    <input #textbox type="text" class="form__field" [(ngModel)]="textValue" required>
+                    <select #tweetnum >
+                        <option value="20">Number of Tweets</option>
+                        <option value=10>10</option>
+                        <option value=20>20</option>
+                        <option value=30>30</option>
+                        <option value=40>40</option>
+                        <option value=50>50</option>
+                        <option value=60>60</option>
+                        <option value=70>70</option>
+                        <option value=80>80</option>
+                        <option value=90>90</option>
+                        <option value=100>100</option>
+                    </select>
+                    <select #tweetType>
+                        <option value="mixed">Tweet Type</option>
+                        <option value="mixed">Mixed</option>
+                        <option value="popular">Popular</option>
+                        <option value="recent">Recent</option>
+                    </select>
+                    <br/>
+                    <button type="button" class="btn btn--primary btn--inside uppercase" (click)="logText2(textbox.value, tweetnum.value, tweetType.value)">
+                    Test
+                    <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true" *ngIf="loading"></span>
+                    </button>
+                    <br/>
+                    <i class="fa fa-spinner fa-spin" *ngIf="loading"></i>
                 </form>
+                <br/><br/>
+                <div id="chartContainer" style="height: 370px; width: 100%;"></div>
             </div>
-            
 
             <div class="alert alert-warning" *ngSwitchCase="false">
                 <span>If you want to </span>
@@ -27,21 +53,5 @@
                 <a class="alert-link" routerLink="register">Register a new account</a>
             </div>
         </div>
-
-        <!--<p>
-            If you have any question on JHipster:
-        </p>
-
-        <ul>
-            <li><a href="https://www.jhipster.tech/" target="_blank" rel="noopener">JHipster homepage</a></li>
-            <li><a href="http://stackoverflow.com/tags/jhipster/info" target="_blank" rel="noopener">JHipster on Stack Overflow</a></li>
-            <li><a href="https://github.com/jhipster/generator-jhipster/issues?state=open" target="_blank" rel="noopener">JHipster bug tracker</a></li>
-            <li><a href="https://gitter.im/jhipster/generator-jhipster" target="_blank" rel="noopener">JHipster public chat room</a></li>
-            <li><a href="https://twitter.com/java_hipster" target="_blank" rel="noopener">follow @java_hipster on Twitter</a></li>
-        </ul>
-
-        <p>
-            <span>If you like JHipster, don't forget to give us a star on</span> <a href="https://github.com/jhipster/generator-jhipster" target="_blank" rel="noopener">GitHub</a>!
-        </p>-->
     </div>
 </div>

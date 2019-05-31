@@ -2,13 +2,18 @@
     "fluentMethods": true,
     "clientRootFolder": "",
     "relationships": [],
-    "fields": [],
-    "changelogDate": "20190505115050",
-    "dto": "no",
+    "fields": [
+        {
+            "fieldName": "search",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20190520152257",
+    "dto": "mapstruct",
     "searchEngine": false,
-    "service": "no",
+    "service": "serviceClass",
     "entityTableName": "search",
     "databaseType": "sql",
     "jpaMetamodelFiltering": false,
-    "pagination": "pagination"
+    "pagination": "no"
 }

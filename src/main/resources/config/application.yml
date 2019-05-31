@@ -24,8 +24,8 @@ eureka:
         instance-info-replication-interval-seconds: 10
         registry-fetch-interval-seconds: 10
     instance:
-        appname: sentimentanalysis2019
-        instanceId: sentimentanalysis2019:${spring.application.instance-id:${random.value}}
+        appname: entitytest
+        instanceId: entitytest:${spring.application.instance-id:${random.value}}
         lease-renewal-interval-in-seconds: 5
         lease-expiration-duration-in-seconds: 10
         status-page-url-path: ${management.endpoints.web.base-path}/info
@@ -87,7 +87,7 @@ management:
 
 spring:
     application:
-        name: sentimentanalysis2019
+        name: entityTest
     jpa:
         open-in-view: false
         properties:
@@ -136,11 +136,11 @@ jhipster:
         #allow-credentials: true
         #max-age: 1800
     mail:
-        from: sentimentanalysis2019@localhost
+        from: entityTest@localhost
     swagger:
         default-include-pattern: /api/.*
-        title: sentimentanalysis2019 API
-        description: sentimentanalysis2019 API documentation
+        title: entityTest API
+        description: entityTest API documentation
         version: 0.0.1
         terms-of-service-url:
         contact-name:

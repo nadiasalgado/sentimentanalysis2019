@@ -1,6 +1,6 @@
 {
-  "name": "Sentimentanalysis2019",
-  "short_name": "Sentimentanalysis2019",
+  "name": "EntityTest",
+  "short_name": "EntityTest",
   "icons": [
       {
           "src": "./content/images/jhipster_family_member_3_head-192.png",

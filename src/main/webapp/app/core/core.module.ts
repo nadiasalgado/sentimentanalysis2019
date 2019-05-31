@@ -17,7 +17,7 @@ import locale from '@angular/common/locales/en';
         DatePipe
     ]
 })
-export class Sentimentanalysis2019CoreModule {
+export class EntityTestCoreModule {
     constructor() {
         registerLocaleData(locale);
     }

@@ -3,7 +3,7 @@ import { HttpResponse } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
 import { Observable, of } from 'rxjs';
 
-import { Sentimentanalysis2019TestModule } from '../../../test.module';
+import { EntityTestTestModule } from '../../../test.module';
 import { UserMgmtUpdateComponent } from 'app/admin/user-management/user-management-update.component';
 import { UserService, User } from 'app/core';
 
@@ -18,7 +18,7 @@ describe('Component Tests', () => {
 
         beforeEach(async(() => {
             TestBed.configureTestingModule({
-                imports: [Sentimentanalysis2019TestModule],
+                imports: [EntityTestTestModule],
                 declarations: [UserMgmtUpdateComponent],
                 providers: [
                     {

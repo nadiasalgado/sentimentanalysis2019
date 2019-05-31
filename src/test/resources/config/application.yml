@@ -17,17 +17,17 @@ eureka:
     client:
         enabled: false
     instance:
-        appname: sentimentanalysis2019
-        instanceId: sentimentanalysis2019:${spring.application.instance-id:${random.value}}
+        appname: entityTest
+        instanceId: entityTest:${spring.application.instance-id:${random.value}}
 
 spring:
     application:
-        name: sentimentanalysis2019
+        name: entityTest
     cache:
         type: simple
     datasource:
         type: com.zaxxer.hikari.HikariDataSource
-        url: jdbc:h2:mem:sentimentanalysis2019;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
+        url: jdbc:h2:mem:entityTest;DB_CLOSE_DELAY=-1;DB_CLOSE_ON_EXIT=FALSE
         name:
         username:
         password:
@@ -93,7 +93,7 @@ jhipster:
         authentication:
             jwt:
                 # This token must be encoded using Base64 (you can type `echo 'secret-key'|base64` on your command line)
-                base64-secret: Y2VkZmRkZmE0NGEzZDEwZTA3ZTYwMTY3NmFiOGRkYzkwMTNlYjQ1ZWI0M2E1YTdjZjk5NmE1MmFlYTVmZjVlZGQwZjc2MzJkM2E0NzZiODgyNzMwZjQ3NTg4MWI5ZDJhNWNkYzZiNTg5OWMxNGJhODgyNjNjYmU0OTA5ZDRmZjg=
+                base64-secret: MzE3YTUyZjNiNTAwYjgyODY1ODcxNGE4Mzg5OTFjYzFiMWQxOGI2ZjZjNDU5NDAzZjU2YmIxNDIyYWY0ZTQyMjZkZDEzNmJkMTA3MDg3ZjBmZjA2ZTgzMzkwZGJjZGQwMzUzNzIxNjcwZmIzY2ZiZTA0NWE4MjE0MzBhNzc4ZjE=
                 # Token is valid 24 hours
                 token-validity-in-seconds: 86400
     metrics:

@@ -11,12 +11,12 @@ import { AuthInterceptor } from './blocks/interceptor/auth.interceptor';
 import { AuthExpiredInterceptor } from './blocks/interceptor/auth-expired.interceptor';
 import { ErrorHandlerInterceptor } from './blocks/interceptor/errorhandler.interceptor';
 import { NotificationInterceptor } from './blocks/interceptor/notification.interceptor';
-import { Sentimentanalysis2019SharedModule } from 'app/shared';
-import { Sentimentanalysis2019CoreModule } from 'app/core';
-import { Sentimentanalysis2019AppRoutingModule } from './app-routing.module';
-import { Sentimentanalysis2019HomeModule } from './home/home.module';
-import { Sentimentanalysis2019AccountModule } from './account/account.module';
-import { Sentimentanalysis2019EntityModule } from './entities/entity.module';
+import { EntityTestSharedModule } from 'app/shared';
+import { EntityTestCoreModule } from 'app/core';
+import { EntityTestAppRoutingModule } from './app-routing.module';
+import { EntityTestHomeModule } from './home/home.module';
+import { EntityTestAccountModule } from './account/account.module';
+import { EntityTestEntityModule } from './entities/entity.module';
 import * as moment from 'moment';
 // jhipster-needle-angular-add-module-import JHipster will add new module here
 import { JhiMainComponent, NavbarComponent, FooterComponent, PageRibbonComponent, ErrorComponent } from './layouts';
@@ -30,13 +30,13 @@ import { JhiMainComponent, NavbarComponent, FooterComponent, PageRibbonComponent
             alertAsToast: false,
             alertTimeout: 5000
         }),
-        Sentimentanalysis2019SharedModule.forRoot(),
-        Sentimentanalysis2019CoreModule,
-        Sentimentanalysis2019HomeModule,
-        Sentimentanalysis2019AccountModule,
+        EntityTestSharedModule.forRoot(),
+        EntityTestCoreModule,
+        EntityTestHomeModule,
+        EntityTestAccountModule,
         // jhipster-needle-angular-add-module JHipster will add new module here
-        Sentimentanalysis2019EntityModule,
-        Sentimentanalysis2019AppRoutingModule
+        EntityTestEntityModule,
+        EntityTestAppRoutingModule
     ],
     declarations: [JhiMainComponent, NavbarComponent, ErrorComponent, PageRibbonComponent, FooterComponent],
     providers: [
@@ -63,7 +63,7 @@ import { JhiMainComponent, NavbarComponent, FooterComponent, PageRibbonComponent
     ],
     bootstrap: [JhiMainComponent]
 })
-export class Sentimentanalysis2019AppModule {
+export class EntityTestAppModule {
     constructor(private dpConfig: NgbDatepickerConfig) {
         this.dpConfig.minDate = { year: moment().year() - 100, month: 1, day: 1 };
     }

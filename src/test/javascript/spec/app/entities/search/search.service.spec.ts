@@ -21,7 +21,7 @@ describe('Service Tests', () => {
             service = injector.get(SearchService);
             httpMock = injector.get(HttpTestingController);
 
-            elemDefault = new Search(0);
+            elemDefault = new Search(0, 'AAAAAAA');
         });
 
         describe('Service methods', async () => {
@@ -53,7 +53,12 @@ describe('Service Tests', () => {
             });
 
             it('should update a Search', async () => {
-                const returnedFromService = Object.assign({}, elemDefault);
+                const returnedFromService = Object.assign(
+                    {
+                        search: 'BBBBBB'
+                    },
+                    elemDefault
+                );
 
                 const expected = Object.assign({}, returnedFromService);
                 service
@@ -65,7 +70,12 @@ describe('Service Tests', () => {
             });
 
             it('should return a list of Search', async () => {
-                const returnedFromService = Object.assign({}, elemDefault);
+                const returnedFromService = Object.assign(
+                    {
+                        search: 'BBBBBB'
+                    },
+                    elemDefault
+                );
                 const expected = Object.assign({}, returnedFromService);
                 service
                     .query(expected)

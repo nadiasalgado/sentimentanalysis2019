@@ -6,23 +6,7 @@ import { RouterModule } from '@angular/router';
         RouterModule.forChild([
             {
                 path: 'search',
-                loadChildren: './search/search.module#Sentimentanalysis2019SearchModule'
-            },
-            {
-                path: 'user-profile',
-                loadChildren: './user-profile/user-profile.module#Sentimentanalysis2019UserProfileModule'
-            },
-            {
-                path: 'user-profile',
-                loadChildren: './user-profile/user-profile.module#Sentimentanalysis2019UserProfileModule'
-            },
-            {
-                path: 'user-profile',
-                loadChildren: './user-profile/user-profile.module#Sentimentanalysis2019UserProfileModule'
-            },
-            {
-                path: 'search',
-                loadChildren: './search/search.module#Sentimentanalysis2019SearchModule'
+                loadChildren: './search/search.module#EntityTestSearchModule'
             }
             /* jhipster-needle-add-entity-route - JHipster will add entity modules routes here */
         ])
@@ -32,4 +16,4 @@ import { RouterModule } from '@angular/router';
     providers: [],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class Sentimentanalysis2019EntityModule {}
+export class EntityTestEntityModule {}
