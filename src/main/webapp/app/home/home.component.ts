@@ -23,6 +23,7 @@ export class HomeComponent implements OnInit {
     account: Account;
     modalRef: NgbModalRef;
     loading = false;
+    textvalue = '';
 
     constructor(
         private accountService: AccountService,
