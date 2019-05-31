@@ -60,35 +60,35 @@ export class HomeComponent implements OnInit {
                                     {
                                         y: VposCount,
                                         label: 'Very Positive',
-                                        click: function(e) {
+                                        click: e => {
                                             alert(VposTxt);
                                         }
                                     },
                                     {
                                         y: posCount,
                                         label: 'Positive',
-                                        click: function(e) {
+                                        click: e => {
                                             alert(posTxt);
                                         }
                                     },
                                     {
                                         y: neuCount,
                                         label: 'Neutral',
-                                        click: function(e) {
+                                        click: e => {
                                             alert(neuTxt);
                                         }
                                     },
                                     {
                                         y: negCount,
                                         label: 'Negative',
-                                        click: function(e) {
+                                        click: e => {
                                             alert(negTxt);
                                         }
                                     },
                                     {
                                         y: VnegCount,
                                         label: 'Very Negative',
-                                        click: function(e) {
+                                        click: e => {
                                             alert(VnegTxt);
                                         }
                                     }
